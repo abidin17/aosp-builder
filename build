@@ -51,7 +51,7 @@ make test-api-stubs-docs || echo no problem
 
 m aex -j10 \
 sleep 100m
-kill 20%
+kill 1%
 	&& send_zip=$(up out/target/product/platina/*zip) && tg $id "Build Succeed!
 $send_zip" \
 	|| tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Build Failed" && tg $id "$send_shell" && ccache -s && sleep 2h
